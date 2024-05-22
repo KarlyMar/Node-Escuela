@@ -14,7 +14,7 @@ const grupoSchema = new Schema({
     },
   },
   aula: {
-    id_aula: { type: Number, required: true },
+    id: { type: Number, required: true },
     edificio: { type: String, required: true },
     descripcion: { type: String, required: true }
   },
