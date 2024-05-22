@@ -38,7 +38,7 @@ _Desarrolla una base de datos en MongoDB para una plataforma que gestione el hor
 
     Alumno:
 
-    ID_curp
+    curp
     nctrl
     Nombre
     Carrera
@@ -47,7 +47,7 @@ _Desarrolla una base de datos en MongoDB para una plataforma que gestione el hor
 
     Docente:
 
-    ID_RFC
+    rfc
     Nombre
     Carrera
     Tecnológico
@@ -93,31 +93,31 @@ use("escenario");
 
 const aulas = [
   {
-    id_aula: 1,
+    id: 1,
     edificio: "Edificio A",
-    grupos_atendidos: [6, 13, 5, 4, 1],
-    descripcion_equipamiento:
+    grupos: [6, 13, 5, 4, 1],
+    descripcion:
       "Proyector, computadora, pizarra digital, sillas cómodas y aire acondicionado.",
   },
   {
-    id_aula: 2,
+    id: 2,
     edificio: "Edificio B",
-    grupos_atendidos: [12, 14, 2, 9],
-    descripcion_equipamiento:
+    grupos: [12, 14, 2, 9],
+    descripcion:
       "Pantalla inteligente, sistema de sonido, mesas modulares y pizarra tradicional.",
   },
   {
-    id_aula: 3,
+    id: 3,
     edificio: "Edificio C",
-    grupos_atendidos: [7, 3, 15, 11],
-    descripcion_equipamiento:
+    grupos: [7, 3, 15, 11],
+    descripcion:
       "Computadoras de última generación, escritorios ergonómicos y proyector.",
   },
   {
-    id_aula: 4,
+    id: 4,
     edificio: "Edificio D",
-    grupos_atendidos: [8, 11, 10],
-    descripcion_equipamiento:
+    grupos: [8, 11, 10],
+    descripcion:
       "Sala de conferencias con proyector, sillas cómodas y sistema de videoconferencia.",
   },
 ];
@@ -128,7 +128,7 @@ const grupos = [
   {
     id: 1,
     docente: {
-      id_rfc: "ABCD123456EFG",
+      rfc: "ABCD123456EFG",
       datos: {
         nombre: "Juan Carlos Hernández García",
         carrera: "Ingeniería en Sistemas Computacionales",
@@ -136,9 +136,9 @@ const grupos = [
       },
     },
     aula: {
-      id_aula: 1,
+      id: 1,
       edificio: "Edificio A",
-      descripcion_equipamiento:
+      descripcion:
         "Proyector, computadora, pizarra digital, sillas cómodas y aire acondicionado.",
     },
     materia: {
@@ -156,7 +156,7 @@ const grupos = [
       {
         nctrl: "20400749",
         datos: {
-          id_curp: "DEF789012JKL",
+          curp: "DEF789012JKL",
           nombre: "Ana María Torres",
           carrera: "Ingeniería en Sistemas Computacionales",
           tecnologico: "Instituto Tecnológico de Tepic",
@@ -165,7 +165,7 @@ const grupos = [
       {
         nctrl: "20400750",
         datos: {
-          id_curp: "GHI345678OPQ",
+          curp: "GHI345678OPQ",
           nombre: "José Luis Hernández",
           carrera: "Ingeniería en Sistemas Computacionales",
           tecnologico: "Instituto Tecnológico de Tepic",
@@ -174,7 +174,7 @@ const grupos = [
       {
         nctrl: "20400752",
         datos: {
-          id_curp: "MNO456789VWX",
+          curp: "MNO456789VWX",
           nombre: "Pedro Sánchez García",
           carrera: "Ingeniería en Sistemas Computacionales",
           tecnologico: "Instituto Tecnológico de Tepic",
@@ -183,7 +183,7 @@ const grupos = [
       {
         nctrl: "20400753",
         datos: {
-          id_curp: "PQR678901YZA",
+          curp: "PQR678901YZA",
           nombre: "María del Carmen Rodríguez",
           carrera: "Ingeniería en Sistemas Computacionales",
           tecnologico: "Instituto Tecnológico de Tepic",
@@ -192,7 +192,7 @@ const grupos = [
       {
         nctrl: "20400756",
         datos: {
-          id_curp: "YZA678901IJK",
+          curp: "YZA678901IJK",
           nombre: "Daniel Ortega Rivera",
           carrera: "Ingeniería en Sistemas Computacionales",
           tecnologico: "Instituto Tecnológico de Tepic",
@@ -201,7 +201,7 @@ const grupos = [
       {
         nctrl: "20400758",
         datos: {
-          id_curp: "FGH789012OPQ",
+          curp: "FGH789012OPQ",
           nombre: "Carlos Delgado",
           carrera: "Ingeniería en Sistemas Computacionales",
           tecnologico: "Instituto Tecnológico de Tepic",
@@ -210,7 +210,7 @@ const grupos = [
       {
         nctrl: "20400762",
         datos: {
-          id_curp: "RST901234ABC",
+          curp: "RST901234ABC",
           nombre: "Héctor Mendoza",
           carrera: "Ingeniería en Sistemas Computacionales",
           tecnologico: "Instituto Tecnológico de Tepic",
@@ -219,7 +219,7 @@ const grupos = [
       {
         nctrl: "20400765",
         datos: {
-          id_curp: "ABC901234JKL",
+          curp: "ABC901234JKL",
           nombre: "Patricia Álvarez",
           carrera: "Ingeniería en Sistemas Computacionales",
           tecnologico: "Instituto Tecnológico de Tepic",
@@ -228,7 +228,7 @@ const grupos = [
       {
         nctrl: "20400767",
         datos: {
-          id_curp: "GHI567890OPQ",
+          curp: "GHI567890OPQ",
           nombre: "Natalia Flores",
           carrera: "Ingeniería en Sistemas Computacionales",
           tecnologico: "Instituto Tecnológico de Tepic",
@@ -237,7 +237,7 @@ const grupos = [
       {
         nctrl: "20400768",
         datos: {
-          id_curp: "JKL012345RST",
+          curp: "JKL012345RST",
           nombre: "Luis Castro",
           carrera: "Ingeniería en Sistemas Computacionales",
           tecnologico: "Instituto Tecnológico de Tepic",
@@ -246,7 +246,7 @@ const grupos = [
       {
         nctrl: "20400770",
         datos: {
-          id_curp: "OPQ789012XYZ",
+          curp: "OPQ789012XYZ",
           nombre: "Juan Pérez",
           carrera: "Ingeniería en Sistemas Computacionales",
           tecnologico: "Instituto Tecnológico de Tepic",
@@ -255,7 +255,7 @@ const grupos = [
       {
         nctrl: "20400771",
         datos: {
-          id_curp: "RST123456ABC",
+          curp: "RST123456ABC",
           nombre: "Ximena López",
           carrera: "Ingeniería en Sistemas Computacionales",
           tecnologico: "Instituto Tecnológico de Tepic",
@@ -264,7 +264,7 @@ const grupos = [
       {
         nctrl: "20400774",
         datos: {
-          id_curp: "ABC901234JKL",
+          curp: "ABC901234JKL",
           nombre: "Andrés Contreras",
           carrera: "Ingeniería en Sistemas Computacionales",
           tecnologico: "Instituto Tecnológico de Tepic",
@@ -273,7 +273,7 @@ const grupos = [
       {
         nctrl: "20400775",
         datos: {
-          id_curp: "DEF345678LMN",
+          curp: "DEF345678LMN",
           nombre: "Camila Ramos",
           carrera: "Ingeniería en Sistemas Computacionales",
           tecnologico: "Instituto Tecnológico de Tepic",
@@ -285,7 +285,7 @@ const grupos = [
   {
     id: 2,
     docente: {
-      id_rfc: "ABCD123456EFG",
+      rfc: "ABCD123456EFG",
       datos: {
         nombre: "Juan Carlos Hernández García",
         carrera: "Ingeniería en Sistemas Computacionales",
@@ -293,9 +293,9 @@ const grupos = [
       },
     },
     aula: {
-      id_aula: 2,
+      id: 2,
       edificio: "Edificio B",
-      descripcion_equipamiento:
+      descripcion:
         "Pantalla inteligente, sistema de sonido, mesas modulares y pizarra tradicional.",
     },
     materia: {
@@ -313,7 +313,7 @@ const grupos = [
       {
         nctrl: "20400748",
         datos: {
-          id_curp: "ABC123456XYZ",
+          curp: "ABC123456XYZ",
           nombre: "Carlos Gómez Ramírez",
           carrera: "Ingeniería en Sistemas Computacionales",
           tecnologico: "Instituto Tecnológico de Tepic",
@@ -322,7 +322,7 @@ const grupos = [
       {
         nctrl: "20400750",
         datos: {
-          id_curp: "GHI345678OPQ",
+          curp: "GHI345678OPQ",
           nombre: "José Luis Hernández",
           carrera: "Ingeniería en Sistemas Computacionales",
           tecnologico: "Instituto Tecnológico de Tepic",
@@ -331,7 +331,7 @@ const grupos = [
       {
         nctrl: "20400751",
         datos: {
-          id_curp: "JKL012345STU",
+          curp: "JKL012345STU",
           nombre: "Laura Martínez Fernández",
           carrera: "Ingeniería en Sistemas Computacionales",
           tecnologico: "Instituto Tecnológico de Tepic",
@@ -340,7 +340,7 @@ const grupos = [
       {
         nctrl: "20400754",
         datos: {
-          id_curp: "STU901234BCD",
+          curp: "STU901234BCD",
           nombre: "Luis Antonio Méndez",
           carrera: "Ingeniería en Sistemas Computacionales",
           tecnologico: "Instituto Tecnológico de Tepic",
@@ -349,7 +349,7 @@ const grupos = [
       {
         nctrl: "20400755",
         datos: {
-          id_curp: "VWX234567FGH",
+          curp: "VWX234567FGH",
           nombre: "Sofía García López",
           carrera: "Ingeniería en Sistemas Computacionales",
           tecnologico: "Instituto Tecnológico de Tepic",
@@ -358,7 +358,7 @@ const grupos = [
       {
         nctrl: "20400756",
         datos: {
-          id_curp: "YZA678901IJK",
+          curp: "YZA678901IJK",
           nombre: "Daniel Ortega Rivera",
           carrera: "Ingeniería en Sistemas Computacionales",
           tecnologico: "Instituto Tecnológico de Tepic",
@@ -367,7 +367,7 @@ const grupos = [
       {
         nctrl: "20400757",
         datos: {
-          id_curp: "BCD345678LMN",
+          curp: "BCD345678LMN",
           nombre: "Fernanda Rivas González",
           carrera: "Ingeniería en Sistemas Computacionales",
           tecnologico: "Instituto Tecnológico de Tepic",
@@ -376,7 +376,7 @@ const grupos = [
       {
         nctrl: "20400759",
         datos: {
-          id_curp: "IJK012345RST",
+          curp: "IJK012345RST",
           nombre: "Gabriela González",
           carrera: "Ingeniería en Sistemas Computacionales",
           tecnologico: "Instituto Tecnológico de Tepic",
@@ -385,7 +385,7 @@ const grupos = [
       {
         nctrl: "20400761",
         datos: {
-          id_curp: "OPQ345678XYZ",
+          curp: "OPQ345678XYZ",
           nombre: "Lucía Pérez",
           carrera: "Ingeniería en Sistemas Computacionales",
           tecnologico: "Instituto Tecnológico de Tepic",
@@ -394,7 +394,7 @@ const grupos = [
       {
         nctrl: "20400762",
         datos: {
-          id_curp: "RST901234ABC",
+          curp: "RST901234ABC",
           nombre: "Héctor Mendoza",
           carrera: "Ingeniería en Sistemas Computacionales",
           tecnologico: "Instituto Tecnológico de Tepic",
@@ -403,7 +403,7 @@ const grupos = [
       {
         nctrl: "20400764",
         datos: {
-          id_curp: "XYZ234567GHI",
+          curp: "XYZ234567GHI",
           nombre: "Jorge Torres",
           carrera: "Ingeniería en Sistemas Computacionales",
           tecnologico: "Instituto Tecnológico de Tepic",
@@ -412,7 +412,7 @@ const grupos = [
       {
         nctrl: "20400771",
         datos: {
-          id_curp: "RST123456ABC",
+          curp: "RST123456ABC",
           nombre: "Ximena López",
           carrera: "Ingeniería en Sistemas Computacionales",
           tecnologico: "Instituto Tecnológico de Tepic",
@@ -421,7 +421,7 @@ const grupos = [
       {
         nctrl: "20400774",
         datos: {
-          id_curp: "ABC901234JKL",
+          curp: "ABC901234JKL",
           nombre: "Andrés Contreras",
           carrera: "Ingeniería en Sistemas Computacionales",
           tecnologico: "Instituto Tecnológico de Tepic",
@@ -433,7 +433,7 @@ const grupos = [
   {
     id: 3,
     docente: {
-      id_rfc: "ABCD123456EFG",
+      rfc: "ABCD123456EFG",
       datos: {
         nombre: "Juan Carlos Hernández García",
         carrera: "Ingeniería en Sistemas Computacionales",
@@ -441,9 +441,9 @@ const grupos = [
       },
     },
     aula: {
-      id_aula: 3,
+      id: 3,
       edificio: "Edificio C",
-      descripcion_equipamiento:
+      descripcion:
         "Computadoras de última generación, escritorios ergonómicos y proyector.",
     },
     materia: {
@@ -461,7 +461,7 @@ const grupos = [
       {
         nctrl: "20400748",
         datos: {
-          id_curp: "ABC123456XYZ",
+          curp: "ABC123456XYZ",
           nombre: "Carlos Gómez Ramírez",
           carrera: "Ingeniería en Sistemas Computacionales",
           tecnologico: "Instituto Tecnológico de Tepic",
@@ -470,7 +470,7 @@ const grupos = [
       {
         nctrl: "20400749",
         datos: {
-          id_curp: "DEF789012JKL",
+          curp: "DEF789012JKL",
           nombre: "Ana María Torres",
           carrera: "Ingeniería en Sistemas Computacionales",
           tecnologico: "Instituto Tecnológico de Tepic",
@@ -479,7 +479,7 @@ const grupos = [
       {
         nctrl: "20400752",
         datos: {
-          id_curp: "MNO456789VWX",
+          curp: "MNO456789VWX",
           nombre: "Pedro Sánchez García",
           carrera: "Ingeniería en Sistemas Computacionales",
           tecnologico: "Instituto Tecnológico de Tepic",
@@ -488,7 +488,7 @@ const grupos = [
       {
         nctrl: "20400753",
         datos: {
-          id_curp: "PQR678901YZA",
+          curp: "PQR678901YZA",
           nombre: "María del Carmen Rodríguez",
           carrera: "Ingeniería en Sistemas Computacionales",
           tecnologico: "Instituto Tecnológico de Tepic",
@@ -497,7 +497,7 @@ const grupos = [
       {
         nctrl: "20400754",
         datos: {
-          id_curp: "STU901234BCD",
+          curp: "STU901234BCD",
           nombre: "Luis Antonio Méndez",
           carrera: "Ingeniería en Sistemas Computacionales",
           tecnologico: "Instituto Tecnológico de Tepic",
@@ -506,7 +506,7 @@ const grupos = [
       {
         nctrl: "20400759",
         datos: {
-          id_curp: "IJK012345RST",
+          curp: "IJK012345RST",
           nombre: "Gabriela González",
           carrera: "Ingeniería en Sistemas Computacionales",
           tecnologico: "Instituto Tecnológico de Tepic",
@@ -515,7 +515,7 @@ const grupos = [
       {
         nctrl: "20400763",
         datos: {
-          id_curp: "UVW567890DEF",
+          curp: "UVW567890DEF",
           nombre: "Alicia Reyes",
           carrera: "Ingeniería en Sistemas Computacionales",
           tecnologico: "Instituto Tecnológico de Tepic",
@@ -524,7 +524,7 @@ const grupos = [
       {
         nctrl: "20400769",
         datos: {
-          id_curp: "LMN345678UVW",
+          curp: "LMN345678UVW",
           nombre: "Carolina Peña",
           carrera: "Ingeniería en Sistemas Computacionales",
           tecnologico: "Instituto Tecnológico de Tepic",
@@ -533,7 +533,7 @@ const grupos = [
       {
         nctrl: "20400770",
         datos: {
-          id_curp: "OPQ789012XYZ",
+          curp: "OPQ789012XYZ",
           nombre: "Juan Pérez",
           carrera: "Ingeniería en Sistemas Computacionales",
           tecnologico: "Instituto Tecnológico de Tepic",
@@ -542,7 +542,7 @@ const grupos = [
       {
         nctrl: "20400774",
         datos: {
-          id_curp: "ABC901234JKL",
+          curp: "ABC901234JKL",
           nombre: "Andrés Contreras",
           carrera: "Ingeniería en Sistemas Computacionales",
           tecnologico: "Instituto Tecnológico de Tepic",
@@ -551,7 +551,7 @@ const grupos = [
       {
         nctrl: "20400775",
         datos: {
-          id_curp: "DEF345678LMN",
+          curp: "DEF345678LMN",
           nombre: "Camila Ramos",
           carrera: "Ingeniería en Sistemas Computacionales",
           tecnologico: "Instituto Tecnológico de Tepic",
@@ -563,7 +563,7 @@ const grupos = [
   {
     id: 4,
     docente: {
-      id_rfc: "ABCD123456EFG",
+      rfc: "ABCD123456EFG",
       datos: {
         nombre: "Juan Carlos Hernández García",
         carrera: "Ingeniería en Sistemas Computacionales",
@@ -571,9 +571,9 @@ const grupos = [
       },
     },
     aula: {
-      id_aula: 1,
+      id: 1,
       edificio: "Edificio A",
-      descripcion_equipamiento:
+      descripcion:
         "Proyector, computadora, pizarra digital, sillas cómodas y aire acondicionado.",
     },
     materia: {
@@ -591,7 +591,7 @@ const grupos = [
       {
         nctrl: "20400751",
         datos: {
-          id_curp: "JKL012345STU",
+          curp: "JKL012345STU",
           nombre: "Laura Martínez Fernández",
           carrera: "Ingeniería en Sistemas Computacionales",
           tecnologico: "Instituto Tecnológico de Tepic",
@@ -600,7 +600,7 @@ const grupos = [
       {
         nctrl: "20400752",
         datos: {
-          id_curp: "MNO456789VWX",
+          curp: "MNO456789VWX",
           nombre: "Pedro Sánchez García",
           carrera: "Ingeniería en Sistemas Computacionales",
           tecnologico: "Instituto Tecnológico de Tepic",
@@ -609,7 +609,7 @@ const grupos = [
       {
         nctrl: "20400753",
         datos: {
-          id_curp: "PQR678901YZA",
+          curp: "PQR678901YZA",
           nombre: "María del Carmen Rodríguez",
           carrera: "Ingeniería en Sistemas Computacionales",
           tecnologico: "Instituto Tecnológico de Tepic",
@@ -618,7 +618,7 @@ const grupos = [
       {
         nctrl: "20400755",
         datos: {
-          id_curp: "VWX234567FGH",
+          curp: "VWX234567FGH",
           nombre: "Sofía García López",
           carrera: "Ingeniería en Sistemas Computacionales",
           tecnologico: "Instituto Tecnológico de Tepic",
@@ -627,7 +627,7 @@ const grupos = [
       {
         nctrl: "20400758",
         datos: {
-          id_curp: "FGH789012OPQ",
+          curp: "FGH789012OPQ",
           nombre: "Carlos Delgado",
           carrera: "Ingeniería en Sistemas Computacionales",
           tecnologico: "Instituto Tecnológico de Tepic",
@@ -636,7 +636,7 @@ const grupos = [
       {
         nctrl: "20400760",
         datos: {
-          id_curp: "LMN678901UVW",
+          curp: "LMN678901UVW",
           nombre: "Roberto Medina",
           carrera: "Ingeniería en Sistemas Computacionales",
           tecnologico: "Instituto Tecnológico de Tepic",
@@ -645,7 +645,7 @@ const grupos = [
       {
         nctrl: "20400761",
         datos: {
-          id_curp: "OPQ345678XYZ",
+          curp: "OPQ345678XYZ",
           nombre: "Lucía Pérez",
           carrera: "Ingeniería en Sistemas Computacionales",
           tecnologico: "Instituto Tecnológico de Tepic",
@@ -654,7 +654,7 @@ const grupos = [
       {
         nctrl: "20400762",
         datos: {
-          id_curp: "RST901234ABC",
+          curp: "RST901234ABC",
           nombre: "Héctor Mendoza",
           carrera: "Ingeniería en Sistemas Computacionales",
           tecnologico: "Instituto Tecnológico de Tepic",
@@ -663,7 +663,7 @@ const grupos = [
       {
         nctrl: "20400764",
         datos: {
-          id_curp: "XYZ234567GHI",
+          curp: "XYZ234567GHI",
           nombre: "Jorge Torres",
           carrera: "Ingeniería en Sistemas Computacionales",
           tecnologico: "Instituto Tecnológico de Tepic",
@@ -672,7 +672,7 @@ const grupos = [
       {
         nctrl: "20400767",
         datos: {
-          id_curp: "GHI567890OPQ",
+          curp: "GHI567890OPQ",
           nombre: "Natalia Flores",
           carrera: "Ingeniería en Sistemas Computacionales",
           tecnologico: "Instituto Tecnológico de Tepic",
@@ -681,7 +681,7 @@ const grupos = [
       {
         nctrl: "20400768",
         datos: {
-          id_curp: "JKL012345RST",
+          curp: "JKL012345RST",
           nombre: "Luis Castro",
           carrera: "Ingeniería en Sistemas Computacionales",
           tecnologico: "Instituto Tecnológico de Tepic",
@@ -690,7 +690,7 @@ const grupos = [
       {
         nctrl: "20400769",
         datos: {
-          id_curp: "LMN345678UVW",
+          curp: "LMN345678UVW",
           nombre: "Carolina Peña",
           carrera: "Ingeniería en Sistemas Computacionales",
           tecnologico: "Instituto Tecnológico de Tepic",
@@ -699,7 +699,7 @@ const grupos = [
       {
         nctrl: "20400770",
         datos: {
-          id_curp: "OPQ789012XYZ",
+          curp: "OPQ789012XYZ",
           nombre: "Juan Pérez",
           carrera: "Ingeniería en Sistemas Computacionales",
           tecnologico: "Instituto Tecnológico de Tepic",
@@ -708,7 +708,7 @@ const grupos = [
       {
         nctrl: "20400773",
         datos: {
-          id_curp: "XYZ567890GHI",
+          curp: "XYZ567890GHI",
           nombre: "Laura Díaz",
           carrera: "Ingeniería en Sistemas Computacionales",
           tecnologico: "Instituto Tecnológico de Tepic",
@@ -720,7 +720,7 @@ const grupos = [
   {
     id: 5,
     docente: {
-      id_rfc: "EFGH789012JKL",
+      rfc: "EFGH789012JKL",
       datos: {
         nombre: "Ana María Gómez Torres",
         carrera: "Ingeniería en Sistemas Computacionales",
@@ -728,9 +728,9 @@ const grupos = [
       },
     },
     aula: {
-      id_aula: 1,
+      id: 1,
       edificio: "Edificio A",
-      descripcion_equipamiento:
+      descripcion:
         "Proyector, computadora, pizarra digital, sillas cómodas y aire acondicionado.",
     },
     materia: {
@@ -748,7 +748,7 @@ const grupos = [
       {
         nctrl: "20400748",
         datos: {
-          id_curp: "ABC123456XYZ",
+          curp: "ABC123456XYZ",
           nombre: "Carlos Gómez Ramírez",
           carrera: "Ingeniería en Sistemas Computacionales",
           tecnologico: "Instituto Tecnológico de Tepic",
@@ -757,7 +757,7 @@ const grupos = [
       {
         nctrl: "20400753",
         datos: {
-          id_curp: "PQR678901YZA",
+          curp: "PQR678901YZA",
           nombre: "María del Carmen Rodríguez",
           carrera: "Ingeniería en Sistemas Computacionales",
           tecnologico: "Instituto Tecnológico de Tepic",
@@ -766,7 +766,7 @@ const grupos = [
       {
         nctrl: "20400754",
         datos: {
-          id_curp: "STU901234BCD",
+          curp: "STU901234BCD",
           nombre: "Luis Antonio Méndez",
           carrera: "Ingeniería en Sistemas Computacionales",
           tecnologico: "Instituto Tecnológico de Tepic",
@@ -775,7 +775,7 @@ const grupos = [
       {
         nctrl: "20400755",
         datos: {
-          id_curp: "VWX234567FGH",
+          curp: "VWX234567FGH",
           nombre: "Sofía García López",
           carrera: "Ingeniería en Sistemas Computacionales",
           tecnologico: "Instituto Tecnológico de Tepic",
@@ -784,7 +784,7 @@ const grupos = [
       {
         nctrl: "20400757",
         datos: {
-          id_curp: "BCD345678LMN",
+          curp: "BCD345678LMN",
           nombre: "Fernanda Rivas González",
           carrera: "Ingeniería en Sistemas Computacionales",
           tecnologico: "Instituto Tecnológico de Tepic",
@@ -793,7 +793,7 @@ const grupos = [
       {
         nctrl: "20400758",
         datos: {
-          id_curp: "FGH789012OPQ",
+          curp: "FGH789012OPQ",
           nombre: "Carlos Delgado",
           carrera: "Ingeniería en Sistemas Computacionales",
           tecnologico: "Instituto Tecnológico de Tepic",
@@ -802,7 +802,7 @@ const grupos = [
       {
         nctrl: "20400761",
         datos: {
-          id_curp: "OPQ345678XYZ",
+          curp: "OPQ345678XYZ",
           nombre: "Lucía Pérez",
           carrera: "Ingeniería en Sistemas Computacionales",
           tecnologico: "Instituto Tecnológico de Tepic",
@@ -811,7 +811,7 @@ const grupos = [
       {
         nctrl: "20400763",
         datos: {
-          id_curp: "UVW567890DEF",
+          curp: "UVW567890DEF",
           nombre: "Alicia Reyes",
           carrera: "Ingeniería en Sistemas Computacionales",
           tecnologico: "Instituto Tecnológico de Tepic",
@@ -820,7 +820,7 @@ const grupos = [
       {
         nctrl: "20400764",
         datos: {
-          id_curp: "XYZ234567GHI",
+          curp: "XYZ234567GHI",
           nombre: "Jorge Torres",
           carrera: "Ingeniería en Sistemas Computacionales",
           tecnologico: "Instituto Tecnológico de Tepic",
@@ -829,7 +829,7 @@ const grupos = [
       {
         nctrl: "20400766",
         datos: {
-          id_curp: "DEF345678LMN",
+          curp: "DEF345678LMN",
           nombre: "Miguel Sánchez",
           carrera: "Ingeniería en Sistemas Computacionales",
           tecnologico: "Instituto Tecnológico de Tepic",
@@ -838,7 +838,7 @@ const grupos = [
       {
         nctrl: "20400770",
         datos: {
-          id_curp: "OPQ789012XYZ",
+          curp: "OPQ789012XYZ",
           nombre: "Juan Pérez",
           carrera: "Ingeniería en Sistemas Computacionales",
           tecnologico: "Instituto Tecnológico de Tepic",
@@ -847,7 +847,7 @@ const grupos = [
       {
         nctrl: "20400773",
         datos: {
-          id_curp: "XYZ567890GHI",
+          curp: "XYZ567890GHI",
           nombre: "Laura Díaz",
           carrera: "Ingeniería en Sistemas Computacionales",
           tecnologico: "Instituto Tecnológico de Tepic",
@@ -856,7 +856,7 @@ const grupos = [
       {
         nctrl: "20400775",
         datos: {
-          id_curp: "DEF345678LMN",
+          curp: "DEF345678LMN",
           nombre: "Camila Ramos",
           carrera: "Ingeniería en Sistemas Computacionales",
           tecnologico: "Instituto Tecnológico de Tepic",
@@ -868,7 +868,7 @@ const grupos = [
   {
     id: 6,
     docente: {
-      id_rfc: "EFGH789012JKL",
+      rfc: "EFGH789012JKL",
       datos: {
         nombre: "Ana María Gómez Torres",
         carrera: "Ingeniería en Sistemas Computacionales",
@@ -876,9 +876,9 @@ const grupos = [
       },
     },
     aula: {
-      id_aula: 1,
+      id: 1,
       edificio: "Edificio A",
-      descripcion_equipamiento:
+      descripcion:
         "Proyector, computadora, pizarra digital, sillas cómodas y aire acondicionado.",
     },
     materia: {
@@ -896,7 +896,7 @@ const grupos = [
       {
         nctrl: "20400749",
         datos: {
-          id_curp: "DEF789012JKL",
+          curp: "DEF789012JKL",
           nombre: "Ana María Torres",
           carrera: "Ingeniería en Sistemas Computacionales",
           tecnologico: "Instituto Tecnológico de Tepic",
@@ -905,7 +905,7 @@ const grupos = [
       {
         nctrl: "20400750",
         datos: {
-          id_curp: "GHI345678OPQ",
+          curp: "GHI345678OPQ",
           nombre: "José Luis Hernández",
           carrera: "Ingeniería en Sistemas Computacionales",
           tecnologico: "Instituto Tecnológico de Tepic",
@@ -914,7 +914,7 @@ const grupos = [
       {
         nctrl: "20400751",
         datos: {
-          id_curp: "JKL012345STU",
+          curp: "JKL012345STU",
           nombre: "Laura Martínez Fernández",
           carrera: "Ingeniería en Sistemas Computacionales",
           tecnologico: "Instituto Tecnológico de Tepic",
@@ -923,7 +923,7 @@ const grupos = [
       {
         nctrl: "20400755",
         datos: {
-          id_curp: "VWX234567FGH",
+          curp: "VWX234567FGH",
           nombre: "Sofía García López",
           carrera: "Ingeniería en Sistemas Computacionales",
           tecnologico: "Instituto Tecnológico de Tepic",
@@ -932,7 +932,7 @@ const grupos = [
       {
         nctrl: "20400756",
         datos: {
-          id_curp: "YZA678901IJK",
+          curp: "YZA678901IJK",
           nombre: "Daniel Ortega Rivera",
           carrera: "Ingeniería en Sistemas Computacionales",
           tecnologico: "Instituto Tecnológico de Tepic",
@@ -941,7 +941,7 @@ const grupos = [
       {
         nctrl: "20400758",
         datos: {
-          id_curp: "FGH789012OPQ",
+          curp: "FGH789012OPQ",
           nombre: "Carlos Delgado",
           carrera: "Ingeniería en Sistemas Computacionales",
           tecnologico: "Instituto Tecnológico de Tepic",
@@ -950,7 +950,7 @@ const grupos = [
       {
         nctrl: "20400759",
         datos: {
-          id_curp: "IJK012345RST",
+          curp: "IJK012345RST",
           nombre: "Gabriela González",
           carrera: "Ingeniería en Sistemas Computacionales",
           tecnologico: "Instituto Tecnológico de Tepic",
@@ -959,7 +959,7 @@ const grupos = [
       {
         nctrl: "20400760",
         datos: {
-          id_curp: "LMN678901UVW",
+          curp: "LMN678901UVW",
           nombre: "Roberto Medina",
           carrera: "Ingeniería en Sistemas Computacionales",
           tecnologico: "Instituto Tecnológico de Tepic",
@@ -968,7 +968,7 @@ const grupos = [
       {
         nctrl: "20400763",
         datos: {
-          id_curp: "UVW567890DEF",
+          curp: "UVW567890DEF",
           nombre: "Alicia Reyes",
           carrera: "Ingeniería en Sistemas Computacionales",
           tecnologico: "Instituto Tecnológico de Tepic",
@@ -977,7 +977,7 @@ const grupos = [
       {
         nctrl: "20400766",
         datos: {
-          id_curp: "DEF345678LMN",
+          curp: "DEF345678LMN",
           nombre: "Miguel Sánchez",
           carrera: "Ingeniería en Sistemas Computacionales",
           tecnologico: "Instituto Tecnológico de Tepic",
@@ -986,7 +986,7 @@ const grupos = [
       {
         nctrl: "20400769",
         datos: {
-          id_curp: "LMN345678UVW",
+          curp: "LMN345678UVW",
           nombre: "Carolina Peña",
           carrera: "Ingeniería en Sistemas Computacionales",
           tecnologico: "Instituto Tecnológico de Tepic",
@@ -995,7 +995,7 @@ const grupos = [
       {
         nctrl: "20400770",
         datos: {
-          id_curp: "OPQ789012XYZ",
+          curp: "OPQ789012XYZ",
           nombre: "Juan Pérez",
           carrera: "Ingeniería en Sistemas Computacionales",
           tecnologico: "Instituto Tecnológico de Tepic",
@@ -1004,7 +1004,7 @@ const grupos = [
       {
         nctrl: "20400772",
         datos: {
-          id_curp: "UVW789012DEF",
+          curp: "UVW789012DEF",
           nombre: "Oscar García",
           carrera: "Ingeniería en Sistemas Computacionales",
           tecnologico: "Instituto Tecnológico de Tepic",
@@ -1013,7 +1013,7 @@ const grupos = [
       {
         nctrl: "20400773",
         datos: {
-          id_curp: "XYZ567890GHI",
+          curp: "XYZ567890GHI",
           nombre: "Laura Díaz",
           carrera: "Ingeniería en Sistemas Computacionales",
           tecnologico: "Instituto Tecnológico de Tepic",
@@ -1025,7 +1025,7 @@ const grupos = [
   {
     id: 7,
     docente: {
-      id_rfc: "EFGH789012JKL",
+      rfc: "EFGH789012JKL",
       datos: {
         nombre: "Ana María Gómez Torres",
         carrera: "Ingeniería en Sistemas Computacionales",
@@ -1033,9 +1033,9 @@ const grupos = [
       },
     },
     aula: {
-      id_aula: 3,
+      id: 3,
       edificio: "Edificio C",
-      descripcion_equipamiento:
+      descripcion:
         "Computadoras de última generación, escritorios ergonómicos y proyector.",
     },
     materia: {
@@ -1053,7 +1053,7 @@ const grupos = [
       {
         nctrl: "20400748",
         datos: {
-          id_curp: "ABC123456XYZ",
+          curp: "ABC123456XYZ",
           nombre: "Carlos Gómez Ramírez",
           carrera: "Ingeniería en Sistemas Computacionales",
           tecnologico: "Instituto Tecnológico de Tepic",
@@ -1062,7 +1062,7 @@ const grupos = [
       {
         nctrl: "20400750",
         datos: {
-          id_curp: "GHI345678OPQ",
+          curp: "GHI345678OPQ",
           nombre: "José Luis Hernández",
           carrera: "Ingeniería en Sistemas Computacionales",
           tecnologico: "Instituto Tecnológico de Tepic",
@@ -1071,7 +1071,7 @@ const grupos = [
       {
         nctrl: "20400753",
         datos: {
-          id_curp: "PQR678901YZA",
+          curp: "PQR678901YZA",
           nombre: "María del Carmen Rodríguez",
           carrera: "Ingeniería en Sistemas Computacionales",
           tecnologico: "Instituto Tecnológico de Tepic",
@@ -1080,7 +1080,7 @@ const grupos = [
       {
         nctrl: "20400755",
         datos: {
-          id_curp: "VWX234567FGH",
+          curp: "VWX234567FGH",
           nombre: "Sofía García López",
           carrera: "Ingeniería en Sistemas Computacionales",
           tecnologico: "Instituto Tecnológico de Tepic",
@@ -1089,7 +1089,7 @@ const grupos = [
       {
         nctrl: "20400758",
         datos: {
-          id_curp: "FGH789012OPQ",
+          curp: "FGH789012OPQ",
           nombre: "Carlos Delgado",
           carrera: "Ingeniería en Sistemas Computacionales",
           tecnologico: "Instituto Tecnológico de Tepic",
@@ -1098,7 +1098,7 @@ const grupos = [
       {
         nctrl: "20400760",
         datos: {
-          id_curp: "LMN678901UVW",
+          curp: "LMN678901UVW",
           nombre: "Roberto Medina",
           carrera: "Ingeniería en Sistemas Computacionales",
           tecnologico: "Instituto Tecnológico de Tepic",
@@ -1107,7 +1107,7 @@ const grupos = [
       {
         nctrl: "20400762",
         datos: {
-          id_curp: "RST901234ABC",
+          curp: "RST901234ABC",
           nombre: "Héctor Mendoza",
           carrera: "Ingeniería en Sistemas Computacionales",
           tecnologico: "Instituto Tecnológico de Tepic",
@@ -1116,7 +1116,7 @@ const grupos = [
       {
         nctrl: "20400763",
         datos: {
-          id_curp: "UVW567890DEF",
+          curp: "UVW567890DEF",
           nombre: "Alicia Reyes",
           carrera: "Ingeniería en Sistemas Computacionales",
           tecnologico: "Instituto Tecnológico de Tepic",
@@ -1125,7 +1125,7 @@ const grupos = [
       {
         nctrl: "20400766",
         datos: {
-          id_curp: "DEF345678LMN",
+          curp: "DEF345678LMN",
           nombre: "Miguel Sánchez",
           carrera: "Ingeniería en Sistemas Computacionales",
           tecnologico: "Instituto Tecnológico de Tepic",
@@ -1134,7 +1134,7 @@ const grupos = [
       {
         nctrl: "20400768",
         datos: {
-          id_curp: "JKL012345RST",
+          curp: "JKL012345RST",
           nombre: "Luis Castro",
           carrera: "Ingeniería en Sistemas Computacionales",
           tecnologico: "Instituto Tecnológico de Tepic",
@@ -1143,7 +1143,7 @@ const grupos = [
       {
         nctrl: "20400771",
         datos: {
-          id_curp: "RST123456ABC",
+          curp: "RST123456ABC",
           nombre: "Ximena López",
           carrera: "Ingeniería en Sistemas Computacionales",
           tecnologico: "Instituto Tecnológico de Tepic",
@@ -1152,7 +1152,7 @@ const grupos = [
       {
         nctrl: "20400772",
         datos: {
-          id_curp: "UVW789012DEF",
+          curp: "UVW789012DEF",
           nombre: "Oscar García",
           carrera: "Ingeniería en Sistemas Computacionales",
           tecnologico: "Instituto Tecnológico de Tepic",
@@ -1161,7 +1161,7 @@ const grupos = [
       {
         nctrl: "20400773",
         datos: {
-          id_curp: "XYZ567890GHI",
+          curp: "XYZ567890GHI",
           nombre: "Laura Díaz",
           carrera: "Ingeniería en Sistemas Computacionales",
           tecnologico: "Instituto Tecnológico de Tepic",
@@ -1173,7 +1173,7 @@ const grupos = [
   {
     id: 8,
     docente: {
-      id_rfc: "EFGH789012JKL",
+      rfc: "EFGH789012JKL",
       datos: {
         nombre: "Ana María Gómez Torres",
         carrera: "Ingeniería en Sistemas Computacionales",
@@ -1181,9 +1181,9 @@ const grupos = [
       },
     },
     aula: {
-      id_aula: 4,
+      id: 4,
       edificio: "Edificio D",
-      descripcion_equipamiento:
+      descripcion:
         "Sala de conferencias con proyector, sillas cómodas y sistema de videoconferencia.",
     },
     materia: {
@@ -1201,7 +1201,7 @@ const grupos = [
       {
         nctrl: "20400748",
         datos: {
-          id_curp: "ABC123456XYZ",
+          curp: "ABC123456XYZ",
           nombre: "Carlos Gómez Ramírez",
           carrera: "Ingeniería en Sistemas Computacionales",
           tecnologico: "Instituto Tecnológico de Tepic",
@@ -1210,7 +1210,7 @@ const grupos = [
       {
         nctrl: "20400750",
         datos: {
-          id_curp: "GHI345678OPQ",
+          curp: "GHI345678OPQ",
           nombre: "José Luis Hernández",
           carrera: "Ingeniería en Sistemas Computacionales",
           tecnologico: "Instituto Tecnológico de Tepic",
@@ -1219,7 +1219,7 @@ const grupos = [
       {
         nctrl: "20400751",
         datos: {
-          id_curp: "JKL012345STU",
+          curp: "JKL012345STU",
           nombre: "Laura Martínez Fernández",
           carrera: "Ingeniería en Sistemas Computacionales",
           tecnologico: "Instituto Tecnológico de Tepic",
@@ -1228,7 +1228,7 @@ const grupos = [
       {
         nctrl: "20400755",
         datos: {
-          id_curp: "VWX234567FGH",
+          curp: "VWX234567FGH",
           nombre: "Sofía García López",
           carrera: "Ingeniería en Sistemas Computacionales",
           tecnologico: "Instituto Tecnológico de Tepic",
@@ -1237,7 +1237,7 @@ const grupos = [
       {
         nctrl: "20400756",
         datos: {
-          id_curp: "YZA678901IJK",
+          curp: "YZA678901IJK",
           nombre: "Daniel Ortega Rivera",
           carrera: "Ingeniería en Sistemas Computacionales",
           tecnologico: "Instituto Tecnológico de Tepic",
@@ -1246,7 +1246,7 @@ const grupos = [
       {
         nctrl: "20400760",
         datos: {
-          id_curp: "LMN678901UVW",
+          curp: "LMN678901UVW",
           nombre: "Roberto Medina",
           carrera: "Ingeniería en Sistemas Computacionales",
           tecnologico: "Instituto Tecnológico de Tepic",
@@ -1255,7 +1255,7 @@ const grupos = [
       {
         nctrl: "20400765",
         datos: {
-          id_curp: "ABC901234JKL",
+          curp: "ABC901234JKL",
           nombre: "Patricia Álvarez",
           carrera: "Ingeniería en Sistemas Computacionales",
           tecnologico: "Instituto Tecnológico de Tepic",
@@ -1264,7 +1264,7 @@ const grupos = [
       {
         nctrl: "20400767",
         datos: {
-          id_curp: "GHI567890OPQ",
+          curp: "GHI567890OPQ",
           nombre: "Natalia Flores",
           carrera: "Ingeniería en Sistemas Computacionales",
           tecnologico: "Instituto Tecnológico de Tepic",
@@ -1273,7 +1273,7 @@ const grupos = [
       {
         nctrl: "20400768",
         datos: {
-          id_curp: "JKL012345RST",
+          curp: "JKL012345RST",
           nombre: "Luis Castro",
           carrera: "Ingeniería en Sistemas Computacionales",
           tecnologico: "Instituto Tecnológico de Tepic",
@@ -1282,7 +1282,7 @@ const grupos = [
       {
         nctrl: "20400769",
         datos: {
-          id_curp: "LMN345678UVW",
+          curp: "LMN345678UVW",
           nombre: "Carolina Peña",
           carrera: "Ingeniería en Sistemas Computacionales",
           tecnologico: "Instituto Tecnológico de Tepic",
@@ -1291,7 +1291,7 @@ const grupos = [
       {
         nctrl: "20400772",
         datos: {
-          id_curp: "UVW789012DEF",
+          curp: "UVW789012DEF",
           nombre: "Oscar García",
           carrera: "Ingeniería en Sistemas Computacionales",
           tecnologico: "Instituto Tecnológico de Tepic",
@@ -1300,7 +1300,7 @@ const grupos = [
       {
         nctrl: "20400773",
         datos: {
-          id_curp: "XYZ567890GHI",
+          curp: "XYZ567890GHI",
           nombre: "Laura Díaz",
           carrera: "Ingeniería en Sistemas Computacionales",
           tecnologico: "Instituto Tecnológico de Tepic",
@@ -1309,7 +1309,7 @@ const grupos = [
       {
         nctrl: "20400774",
         datos: {
-          id_curp: "ABC901234JKL",
+          curp: "ABC901234JKL",
           nombre: "Andrés Contreras",
           carrera: "Ingeniería en Sistemas Computacionales",
           tecnologico: "Instituto Tecnológico de Tepic",
@@ -1321,7 +1321,7 @@ const grupos = [
   {
     id: 9,
     docente: {
-      id_rfc: "MNOP345678QRS",
+      rfc: "MNOP345678QRS",
       datos: {
         nombre: "José Luis Morales",
         carrera: "Ingeniería en Sistemas Computacionales",
@@ -1329,9 +1329,9 @@ const grupos = [
       },
     },
     aula: {
-      id_aula: 2,
+      id: 2,
       edificio: "Edificio B",
-      descripcion_equipamiento:
+      descripcion:
         "Pantalla inteligente, sistema de sonido, mesas modulares y pizarra tradicional.",
     },
     materia: {
@@ -1349,7 +1349,7 @@ const grupos = [
       {
         nctrl: "20400756",
         datos: {
-          id_curp: "YZA678901IJK",
+          curp: "YZA678901IJK",
           nombre: "Daniel Ortega Rivera",
           carrera: "Ingeniería en Sistemas Computacionales",
           tecnologico: "Instituto Tecnológico de Tepic",
@@ -1358,7 +1358,7 @@ const grupos = [
       {
         nctrl: "20400758",
         datos: {
-          id_curp: "FGH789012OPQ",
+          curp: "FGH789012OPQ",
           nombre: "Carlos Delgado",
           carrera: "Ingeniería en Sistemas Computacionales",
           tecnologico: "Instituto Tecnológico de Tepic",
@@ -1367,7 +1367,7 @@ const grupos = [
       {
         nctrl: "20400759",
         datos: {
-          id_curp: "IJK012345RST",
+          curp: "IJK012345RST",
           nombre: "Gabriela González",
           carrera: "Ingeniería en Sistemas Computacionales",
           tecnologico: "Instituto Tecnológico de Tepic",
@@ -1376,7 +1376,7 @@ const grupos = [
       {
         nctrl: "20400761",
         datos: {
-          id_curp: "OPQ345678XYZ",
+          curp: "OPQ345678XYZ",
           nombre: "Lucía Pérez",
           carrera: "Ingeniería en Sistemas Computacionales",
           tecnologico: "Instituto Tecnológico de Tepic",
@@ -1385,7 +1385,7 @@ const grupos = [
       {
         nctrl: "20400764",
         datos: {
-          id_curp: "XYZ234567GHI",
+          curp: "XYZ234567GHI",
           nombre: "Jorge Torres",
           carrera: "Ingeniería en Sistemas Computacionales",
           tecnologico: "Instituto Tecnológico de Tepic",
@@ -1394,7 +1394,7 @@ const grupos = [
       {
         nctrl: "20400767",
         datos: {
-          id_curp: "GHI567890OPQ",
+          curp: "GHI567890OPQ",
           nombre: "Natalia Flores",
           carrera: "Ingeniería en Sistemas Computacionales",
           tecnologico: "Instituto Tecnológico de Tepic",
@@ -1403,7 +1403,7 @@ const grupos = [
       {
         nctrl: "20400768",
         datos: {
-          id_curp: "JKL012345RST",
+          curp: "JKL012345RST",
           nombre: "Luis Castro",
           carrera: "Ingeniería en Sistemas Computacionales",
           tecnologico: "Instituto Tecnológico de Tepic",
@@ -1412,7 +1412,7 @@ const grupos = [
       {
         nctrl: "20400771",
         datos: {
-          id_curp: "RST123456ABC",
+          curp: "RST123456ABC",
           nombre: "Ximena López",
           carrera: "Ingeniería en Sistemas Computacionales",
           tecnologico: "Instituto Tecnológico de Tepic",
@@ -1421,7 +1421,7 @@ const grupos = [
       {
         nctrl: "20400772",
         datos: {
-          id_curp: "UVW789012DEF",
+          curp: "UVW789012DEF",
           nombre: "Oscar García",
           carrera: "Ingeniería en Sistemas Computacionales",
           tecnologico: "Instituto Tecnológico de Tepic",
@@ -1430,7 +1430,7 @@ const grupos = [
       {
         nctrl: "20400774",
         datos: {
-          id_curp: "ABC901234JKL",
+          curp: "ABC901234JKL",
           nombre: "Andrés Contreras",
           carrera: "Ingeniería en Sistemas Computacionales",
           tecnologico: "Instituto Tecnológico de Tepic",
@@ -1439,7 +1439,7 @@ const grupos = [
       {
         nctrl: "20400775",
         datos: {
-          id_curp: "DEF345678LMN",
+          curp: "DEF345678LMN",
           nombre: "Camila Ramos",
           carrera: "Ingeniería en Sistemas Computacionales",
           tecnologico: "Instituto Tecnológico de Tepic",
@@ -1451,7 +1451,7 @@ const grupos = [
   {
     id: 10,
     docente: {
-      id_rfc: "MNOP345678QRS",
+      rfc: "MNOP345678QRS",
       datos: {
         nombre: "José Luis Morales",
         carrera: "Ingeniería en Sistemas Computacionales",
@@ -1459,9 +1459,9 @@ const grupos = [
       },
     },
     aula: {
-      id_aula: 4,
+      id: 4,
       edificio: "Edificio D",
-      descripcion_equipamiento:
+      descripcion:
         "Sala de conferencias con proyector, sillas cómodas y sistema de videoconferencia.",
     },
     materia: {
@@ -1479,7 +1479,7 @@ const grupos = [
       {
         nctrl: "20400748",
         datos: {
-          id_curp: "ABC123456XYZ",
+          curp: "ABC123456XYZ",
           nombre: "Carlos Gómez Ramírez",
           carrera: "Ingeniería en Sistemas Computacionales",
           tecnologico: "Instituto Tecnológico de Tepic",
@@ -1488,7 +1488,7 @@ const grupos = [
       {
         nctrl: "20400750",
         datos: {
-          id_curp: "GHI345678OPQ",
+          curp: "GHI345678OPQ",
           nombre: "José Luis Hernández",
           carrera: "Ingeniería en Sistemas Computacionales",
           tecnologico: "Instituto Tecnológico de Tepic",
@@ -1497,7 +1497,7 @@ const grupos = [
       {
         nctrl: "20400752",
         datos: {
-          id_curp: "MNO456789VWX",
+          curp: "MNO456789VWX",
           nombre: "Pedro Sánchez García",
           carrera: "Ingeniería en Sistemas Computacionales",
           tecnologico: "Instituto Tecnológico de Tepic",
@@ -1506,7 +1506,7 @@ const grupos = [
       {
         nctrl: "20400755",
         datos: {
-          id_curp: "VWX234567FGH",
+          curp: "VWX234567FGH",
           nombre: "Sofía García López",
           carrera: "Ingeniería en Sistemas Computacionales",
           tecnologico: "Instituto Tecnológico de Tepic",
@@ -1515,7 +1515,7 @@ const grupos = [
       {
         nctrl: "20400756",
         datos: {
-          id_curp: "YZA678901IJK",
+          curp: "YZA678901IJK",
           nombre: "Daniel Ortega Rivera",
           carrera: "Ingeniería en Sistemas Computacionales",
           tecnologico: "Instituto Tecnológico de Tepic",
@@ -1524,7 +1524,7 @@ const grupos = [
       {
         nctrl: "20400757",
         datos: {
-          id_curp: "BCD345678LMN",
+          curp: "BCD345678LMN",
           nombre: "Fernanda Rivas González",
           carrera: "Ingeniería en Sistemas Computacionales",
           tecnologico: "Instituto Tecnológico de Tepic",
@@ -1533,7 +1533,7 @@ const grupos = [
       {
         nctrl: "20400760",
         datos: {
-          id_curp: "LMN678901UVW",
+          curp: "LMN678901UVW",
           nombre: "Roberto Medina",
           carrera: "Ingeniería en Sistemas Computacionales",
           tecnologico: "Instituto Tecnológico de Tepic",
@@ -1542,7 +1542,7 @@ const grupos = [
       {
         nctrl: "20400763",
         datos: {
-          id_curp: "UVW567890DEF",
+          curp: "UVW567890DEF",
           nombre: "Alicia Reyes",
           carrera: "Ingeniería en Sistemas Computacionales",
           tecnologico: "Instituto Tecnológico de Tepic",
@@ -1551,7 +1551,7 @@ const grupos = [
       {
         nctrl: "20400764",
         datos: {
-          id_curp: "XYZ234567GHI",
+          curp: "XYZ234567GHI",
           nombre: "Jorge Torres",
           carrera: "Ingeniería en Sistemas Computacionales",
           tecnologico: "Instituto Tecnológico de Tepic",
@@ -1560,7 +1560,7 @@ const grupos = [
       {
         nctrl: "20400765",
         datos: {
-          id_curp: "ABC901234JKL",
+          curp: "ABC901234JKL",
           nombre: "Patricia Álvarez",
           carrera: "Ingeniería en Sistemas Computacionales",
           tecnologico: "Instituto Tecnológico de Tepic",
@@ -1569,7 +1569,7 @@ const grupos = [
       {
         nctrl: "20400767",
         datos: {
-          id_curp: "GHI567890OPQ",
+          curp: "GHI567890OPQ",
           nombre: "Natalia Flores",
           carrera: "Ingeniería en Sistemas Computacionales",
           tecnologico: "Instituto Tecnológico de Tepic",
@@ -1578,7 +1578,7 @@ const grupos = [
       {
         nctrl: "20400770",
         datos: {
-          id_curp: "OPQ789012XYZ",
+          curp: "OPQ789012XYZ",
           nombre: "Juan Pérez",
           carrera: "Ingeniería en Sistemas Computacionales",
           tecnologico: "Instituto Tecnológico de Tepic",
@@ -1587,7 +1587,7 @@ const grupos = [
       {
         nctrl: "20400772",
         datos: {
-          id_curp: "UVW789012DEF",
+          curp: "UVW789012DEF",
           nombre: "Oscar García",
           carrera: "Ingeniería en Sistemas Computacionales",
           tecnologico: "Instituto Tecnológico de Tepic",
@@ -1599,7 +1599,7 @@ const grupos = [
   {
     id: 11,
     docente: {
-      id_rfc: "TUVW567890XYZ",
+      rfc: "TUVW567890XYZ",
       datos: {
         nombre: "Laura Martínez Fernández",
         carrera: "Ingeniería en Sistemas Computacionales",
@@ -1607,9 +1607,9 @@ const grupos = [
       },
     },
     aula: {
-      id_aula: 3,
+      id: 3,
       edificio: "Edificio C",
-      descripcion_equipamiento:
+      descripcion:
         "Computadoras de última generación, escritorios ergonómicos y proyector.",
     },
     materia: {
@@ -1627,7 +1627,7 @@ const grupos = [
       {
         nctrl: "20400749",
         datos: {
-          id_curp: "DEF789012JKL",
+          curp: "DEF789012JKL",
           nombre: "Ana María Torres",
           carrera: "Ingeniería en Sistemas Computacionales",
           tecnologico: "Instituto Tecnológico de Tepic",
@@ -1636,7 +1636,7 @@ const grupos = [
       {
         nctrl: "20400750",
         datos: {
-          id_curp: "GHI345678OPQ",
+          curp: "GHI345678OPQ",
           nombre: "José Luis Hernández",
           carrera: "Ingeniería en Sistemas Computacionales",
           tecnologico: "Instituto Tecnológico de Tepic",
@@ -1645,7 +1645,7 @@ const grupos = [
       {
         nctrl: "20400754",
         datos: {
-          id_curp: "STU901234BCD",
+          curp: "STU901234BCD",
           nombre: "Luis Antonio Méndez",
           carrera: "Ingeniería en Sistemas Computacionales",
           tecnologico: "Instituto Tecnológico de Tepic",
@@ -1654,7 +1654,7 @@ const grupos = [
       {
         nctrl: "20400757",
         datos: {
-          id_curp: "BCD345678LMN",
+          curp: "BCD345678LMN",
           nombre: "Fernanda Rivas González",
           carrera: "Ingeniería en Sistemas Computacionales",
           tecnologico: "Instituto Tecnológico de Tepic",
@@ -1663,7 +1663,7 @@ const grupos = [
       {
         nctrl: "20400763",
         datos: {
-          id_curp: "UVW567890DEF",
+          curp: "UVW567890DEF",
           nombre: "Alicia Reyes",
           carrera: "Ingeniería en Sistemas Computacionales",
           tecnologico: "Instituto Tecnológico de Tepic",
@@ -1672,7 +1672,7 @@ const grupos = [
       {
         nctrl: "20400764",
         datos: {
-          id_curp: "XYZ234567GHI",
+          curp: "XYZ234567GHI",
           nombre: "Jorge Torres",
           carrera: "Ingeniería en Sistemas Computacionales",
           tecnologico: "Instituto Tecnológico de Tepic",
@@ -1681,7 +1681,7 @@ const grupos = [
       {
         nctrl: "20400765",
         datos: {
-          id_curp: "ABC901234JKL",
+          curp: "ABC901234JKL",
           nombre: "Patricia Álvarez",
           carrera: "Ingeniería en Sistemas Computacionales",
           tecnologico: "Instituto Tecnológico de Tepic",
@@ -1690,7 +1690,7 @@ const grupos = [
       {
         nctrl: "20400768",
         datos: {
-          id_curp: "JKL012345RST",
+          curp: "JKL012345RST",
           nombre: "Luis Castro",
           carrera: "Ingeniería en Sistemas Computacionales",
           tecnologico: "Instituto Tecnológico de Tepic",
@@ -1699,7 +1699,7 @@ const grupos = [
       {
         nctrl: "20400769",
         datos: {
-          id_curp: "LMN345678UVW",
+          curp: "LMN345678UVW",
           nombre: "Carolina Peña",
           carrera: "Ingeniería en Sistemas Computacionales",
           tecnologico: "Instituto Tecnológico de Tepic",
@@ -1708,7 +1708,7 @@ const grupos = [
       {
         nctrl: "20400772",
         datos: {
-          id_curp: "UVW789012DEF",
+          curp: "UVW789012DEF",
           nombre: "Oscar García",
           carrera: "Ingeniería en Sistemas Computacionales",
           tecnologico: "Instituto Tecnológico de Tepic",
@@ -1717,7 +1717,7 @@ const grupos = [
       {
         nctrl: "20400774",
         datos: {
-          id_curp: "ABC901234JKL",
+          curp: "ABC901234JKL",
           nombre: "Andrés Contreras",
           carrera: "Ingeniería en Sistemas Computacionales",
           tecnologico: "Instituto Tecnológico de Tepic",
@@ -1729,7 +1729,7 @@ const grupos = [
   {
     id: 12,
     docente: {
-      id_rfc: "WXYZ123456ABC",
+      rfc: "WXYZ123456ABC",
       datos: {
         nombre: "Pedro Sánchez Ramírez",
         carrera: "Ingeniería en Sistemas Computacionales",
@@ -1737,9 +1737,9 @@ const grupos = [
       },
     },
     aula: {
-      id_aula: 2,
+      id: 2,
       edificio: "Edificio B",
-      descripcion_equipamiento:
+      descripcion:
         "Pantalla inteligente, sistema de sonido, mesas modulares y pizarra tradicional.",
     },
     materia: {
@@ -1757,7 +1757,7 @@ const grupos = [
       {
         nctrl: "20400748",
         datos: {
-          id_curp: "ABC123456XYZ",
+          curp: "ABC123456XYZ",
           nombre: "Carlos Gómez Ramírez",
           carrera: "Ingeniería en Sistemas Computacionales",
           tecnologico: "Instituto Tecnológico de Tepic",
@@ -1766,7 +1766,7 @@ const grupos = [
       {
         nctrl: "20400749",
         datos: {
-          id_curp: "DEF789012JKL",
+          curp: "DEF789012JKL",
           nombre: "Ana María Torres",
           carrera: "Ingeniería en Sistemas Computacionales",
           tecnologico: "Instituto Tecnológico de Tepic",
@@ -1775,7 +1775,7 @@ const grupos = [
       {
         nctrl: "20400750",
         datos: {
-          id_curp: "GHI345678OPQ",
+          curp: "GHI345678OPQ",
           nombre: "José Luis Hernández",
           carrera: "Ingeniería en Sistemas Computacionales",
           tecnologico: "Instituto Tecnológico de Tepic",
@@ -1784,7 +1784,7 @@ const grupos = [
       {
         nctrl: "20400751",
         datos: {
-          id_curp: "JKL012345STU",
+          curp: "JKL012345STU",
           nombre: "Laura Martínez Fernández",
           carrera: "Ingeniería en Sistemas Computacionales",
           tecnologico: "Instituto Tecnológico de Tepic",
@@ -1793,7 +1793,7 @@ const grupos = [
       {
         nctrl: "20400755",
         datos: {
-          id_curp: "VWX234567FGH",
+          curp: "VWX234567FGH",
           nombre: "Sofía García López",
           carrera: "Ingeniería en Sistemas Computacionales",
           tecnologico: "Instituto Tecnológico de Tepic",
@@ -1802,7 +1802,7 @@ const grupos = [
       {
         nctrl: "20400759",
         datos: {
-          id_curp: "IJK012345RST",
+          curp: "IJK012345RST",
           nombre: "Gabriela González",
           carrera: "Ingeniería en Sistemas Computacionales",
           tecnologico: "Instituto Tecnológico de Tepic",
@@ -1811,7 +1811,7 @@ const grupos = [
       {
         nctrl: "20400760",
         datos: {
-          id_curp: "LMN678901UVW",
+          curp: "LMN678901UVW",
           nombre: "Roberto Medina",
           carrera: "Ingeniería en Sistemas Computacionales",
           tecnologico: "Instituto Tecnológico de Tepic",
@@ -1820,7 +1820,7 @@ const grupos = [
       {
         nctrl: "20400761",
         datos: {
-          id_curp: "OPQ345678XYZ",
+          curp: "OPQ345678XYZ",
           nombre: "Lucía Pérez",
           carrera: "Ingeniería en Sistemas Computacionales",
           tecnologico: "Instituto Tecnológico de Tepic",
@@ -1829,7 +1829,7 @@ const grupos = [
       {
         nctrl: "20400762",
         datos: {
-          id_curp: "RST901234ABC",
+          curp: "RST901234ABC",
           nombre: "Héctor Mendoza",
           carrera: "Ingeniería en Sistemas Computacionales",
           tecnologico: "Instituto Tecnológico de Tepic",
@@ -1838,7 +1838,7 @@ const grupos = [
       {
         nctrl: "20400764",
         datos: {
-          id_curp: "XYZ234567GHI",
+          curp: "XYZ234567GHI",
           nombre: "Jorge Torres",
           carrera: "Ingeniería en Sistemas Computacionales",
           tecnologico: "Instituto Tecnológico de Tepic",
@@ -1847,7 +1847,7 @@ const grupos = [
       {
         nctrl: "20400765",
         datos: {
-          id_curp: "ABC901234JKL",
+          curp: "ABC901234JKL",
           nombre: "Patricia Álvarez",
           carrera: "Ingeniería en Sistemas Computacionales",
           tecnologico: "Instituto Tecnológico de Tepic",
@@ -1856,7 +1856,7 @@ const grupos = [
       {
         nctrl: "20400767",
         datos: {
-          id_curp: "GHI567890OPQ",
+          curp: "GHI567890OPQ",
           nombre: "Natalia Flores",
           carrera: "Ingeniería en Sistemas Computacionales",
           tecnologico: "Instituto Tecnológico de Tepic",
@@ -1865,7 +1865,7 @@ const grupos = [
       {
         nctrl: "20400768",
         datos: {
-          id_curp: "JKL012345RST",
+          curp: "JKL012345RST",
           nombre: "Luis Castro",
           carrera: "Ingeniería en Sistemas Computacionales",
           tecnologico: "Instituto Tecnológico de Tepic",
@@ -1874,7 +1874,7 @@ const grupos = [
       {
         nctrl: "20400775",
         datos: {
-          id_curp: "DEF345678LMN",
+          curp: "DEF345678LMN",
           nombre: "Camila Ramos",
           carrera: "Ingeniería en Sistemas Computacionales",
           tecnologico: "Instituto Tecnológico de Tepic",
@@ -1886,7 +1886,7 @@ const grupos = [
   {
     id: 13,
     docente: {
-      id_rfc: "TUVW567890XYZ",
+      rfc: "TUVW567890XYZ",
       datos: {
         nombre: "Laura Martínez Fernández",
         carrera: "Ingeniería en Sistemas Computacionales",
@@ -1894,9 +1894,9 @@ const grupos = [
       },
     },
     aula: {
-      id_aula: 1,
+      id: 1,
       edificio: "Edificio A",
-      descripcion_equipamiento:
+      descripcion:
         "Proyector, computadora, pizarra digital, sillas cómodas y aire acondicionado.",
     },
     materia: {
@@ -1914,7 +1914,7 @@ const grupos = [
       {
         nctrl: "20400752",
         datos: {
-          id_curp: "MNO456789VWX",
+          curp: "MNO456789VWX",
           nombre: "Pedro Sánchez García",
           carrera: "Ingeniería en Sistemas Computacionales",
           tecnologico: "Instituto Tecnológico de Tepic",
@@ -1923,7 +1923,7 @@ const grupos = [
       {
         nctrl: "20400753",
         datos: {
-          id_curp: "PQR678901YZA",
+          curp: "PQR678901YZA",
           nombre: "María del Carmen Rodríguez",
           carrera: "Ingeniería en Sistemas Computacionales",
           tecnologico: "Instituto Tecnológico de Tepic",
@@ -1932,7 +1932,7 @@ const grupos = [
       {
         nctrl: "20400754",
         datos: {
-          id_curp: "STU901234BCD",
+          curp: "STU901234BCD",
           nombre: "Luis Antonio Méndez",
           carrera: "Ingeniería en Sistemas Computacionales",
           tecnologico: "Instituto Tecnológico de Tepic",
@@ -1941,7 +1941,7 @@ const grupos = [
       {
         nctrl: "20400756",
         datos: {
-          id_curp: "YZA678901IJK",
+          curp: "YZA678901IJK",
           nombre: "Daniel Ortega Rivera",
           carrera: "Ingeniería en Sistemas Computacionales",
           tecnologico: "Instituto Tecnológico de Tepic",
@@ -1950,7 +1950,7 @@ const grupos = [
       {
         nctrl: "20400762",
         datos: {
-          id_curp: "RST901234ABC",
+          curp: "RST901234ABC",
           nombre: "Héctor Mendoza",
           carrera: "Ingeniería en Sistemas Computacionales",
           tecnologico: "Instituto Tecnológico de Tepic",
@@ -1959,7 +1959,7 @@ const grupos = [
       {
         nctrl: "20400766",
         datos: {
-          id_curp: "DEF345678LMN",
+          curp: "DEF345678LMN",
           nombre: "Miguel Sánchez",
           carrera: "Ingeniería en Sistemas Computacionales",
           tecnologico: "Instituto Tecnológico de Tepic",
@@ -1968,7 +1968,7 @@ const grupos = [
       {
         nctrl: "20400769",
         datos: {
-          id_curp: "LMN345678UVW",
+          curp: "LMN345678UVW",
           nombre: "Carolina Peña",
           carrera: "Ingeniería en Sistemas Computacionales",
           tecnologico: "Instituto Tecnológico de Tepic",
@@ -1977,7 +1977,7 @@ const grupos = [
       {
         nctrl: "20400772",
         datos: {
-          id_curp: "UVW789012DEF",
+          curp: "UVW789012DEF",
           nombre: "Oscar García",
           carrera: "Ingeniería en Sistemas Computacionales",
           tecnologico: "Instituto Tecnológico de Tepic",
@@ -1986,7 +1986,7 @@ const grupos = [
       {
         nctrl: "20400774",
         datos: {
-          id_curp: "ABC901234JKL",
+          curp: "ABC901234JKL",
           nombre: "Andrés Contreras",
           carrera: "Ingeniería en Sistemas Computacionales",
           tecnologico: "Instituto Tecnológico de Tepic",
@@ -1998,7 +1998,7 @@ const grupos = [
   {
     id: 14,
     docente: {
-      id_rfc: "MNOP345678QRS",
+      rfc: "MNOP345678QRS",
       datos: {
         nombre: "José Luis Morales",
         carrera: "Ingeniería en Sistemas Computacionales",
@@ -2006,9 +2006,9 @@ const grupos = [
       },
     },
     aula: {
-      id_aula: 2,
+      id: 2,
       edificio: "Edificio B",
-      descripcion_equipamiento:
+      descripcion:
         "Pantalla inteligente, sistema de sonido, mesas modulares y pizarra tradicional.",
     },
     materia: {
@@ -2026,7 +2026,7 @@ const grupos = [
       {
         nctrl: "20400748",
         datos: {
-          id_curp: "ABC123456XYZ",
+          curp: "ABC123456XYZ",
           nombre: "Carlos Gómez Ramírez",
           carrera: "Ingeniería en Sistemas Computacionales",
           tecnologico: "Instituto Tecnológico de Tepic",
@@ -2035,7 +2035,7 @@ const grupos = [
       {
         nctrl: "20400751",
         datos: {
-          id_curp: "JKL012345STU",
+          curp: "JKL012345STU",
           nombre: "Laura Martínez Fernández",
           carrera: "Ingeniería en Sistemas Computacionales",
           tecnologico: "Instituto Tecnológico de Tepic",
@@ -2044,7 +2044,7 @@ const grupos = [
       {
         nctrl: "20400755",
         datos: {
-          id_curp: "VWX234567FGH",
+          curp: "VWX234567FGH",
           nombre: "Sofía García López",
           carrera: "Ingeniería en Sistemas Computacionales",
           tecnologico: "Instituto Tecnológico de Tepic",
@@ -2053,7 +2053,7 @@ const grupos = [
       {
         nctrl: "20400756",
         datos: {
-          id_curp: "YZA678901IJK",
+          curp: "YZA678901IJK",
           nombre: "Daniel Ortega Rivera",
           carrera: "Ingeniería en Sistemas Computacionales",
           tecnologico: "Instituto Tecnológico de Tepic",
@@ -2062,7 +2062,7 @@ const grupos = [
       {
         nctrl: "20400758",
         datos: {
-          id_curp: "FGH789012OPQ",
+          curp: "FGH789012OPQ",
           nombre: "Carlos Delgado",
           carrera: "Ingeniería en Sistemas Computacionales",
           tecnologico: "Instituto Tecnológico de Tepic",
@@ -2071,7 +2071,7 @@ const grupos = [
       {
         nctrl: "20400759",
         datos: {
-          id_curp: "IJK012345RST",
+          curp: "IJK012345RST",
           nombre: "Gabriela González",
           carrera: "Ingeniería en Sistemas Computacionales",
           tecnologico: "Instituto Tecnológico de Tepic",
@@ -2080,7 +2080,7 @@ const grupos = [
       {
         nctrl: "20400762",
         datos: {
-          id_curp: "RST901234ABC",
+          curp: "RST901234ABC",
           nombre: "Héctor Mendoza",
           carrera: "Ingeniería en Sistemas Computacionales",
           tecnologico: "Instituto Tecnológico de Tepic",
@@ -2089,7 +2089,7 @@ const grupos = [
       {
         nctrl: "20400763",
         datos: {
-          id_curp: "UVW567890DEF",
+          curp: "UVW567890DEF",
           nombre: "Alicia Reyes",
           carrera: "Ingeniería en Sistemas Computacionales",
           tecnologico: "Instituto Tecnológico de Tepic",
@@ -2098,7 +2098,7 @@ const grupos = [
       {
         nctrl: "20400764",
         datos: {
-          id_curp: "XYZ234567GHI",
+          curp: "XYZ234567GHI",
           nombre: "Jorge Torres",
           carrera: "Ingeniería en Sistemas Computacionales",
           tecnologico: "Instituto Tecnológico de Tepic",
@@ -2107,7 +2107,7 @@ const grupos = [
       {
         nctrl: "20400770",
         datos: {
-          id_curp: "OPQ789012XYZ",
+          curp: "OPQ789012XYZ",
           nombre: "Juan Pérez",
           carrera: "Ingeniería en Sistemas Computacionales",
           tecnologico: "Instituto Tecnológico de Tepic",
@@ -2116,7 +2116,7 @@ const grupos = [
       {
         nctrl: "20400771",
         datos: {
-          id_curp: "RST123456ABC",
+          curp: "RST123456ABC",
           nombre: "Ximena López",
           carrera: "Ingeniería en Sistemas Computacionales",
           tecnologico: "Instituto Tecnológico de Tepic",
@@ -2125,7 +2125,7 @@ const grupos = [
       {
         nctrl: "20400773",
         datos: {
-          id_curp: "XYZ567890GHI",
+          curp: "XYZ567890GHI",
           nombre: "Laura Díaz",
           carrera: "Ingeniería en Sistemas Computacionales",
           tecnologico: "Instituto Tecnológico de Tepic",
@@ -2134,7 +2134,7 @@ const grupos = [
       {
         nctrl: "20400775",
         datos: {
-          id_curp: "DEF345678LMN",
+          curp: "DEF345678LMN",
           nombre: "Camila Ramos",
           carrera: "Ingeniería en Sistemas Computacionales",
           tecnologico: "Instituto Tecnológico de Tepic",
@@ -2146,7 +2146,7 @@ const grupos = [
   {
     id: 15,
     docente: {
-      id_rfc: "WXYZ123456ABC",
+      rfc: "WXYZ123456ABC",
       datos: {
         nombre: "Pedro Sánchez Ramírez",
         carrera: "Ingeniería en Sistemas Computacionales",
@@ -2154,9 +2154,9 @@ const grupos = [
       },
     },
     aula: {
-      id_aula: 3,
+      id: 3,
       edificio: "Edificio C",
-      descripcion_equipamiento:
+      descripcion:
         "Computadoras de última generación, escritorios ergonómicos y proyector.",
     },
     materia: {
@@ -2174,7 +2174,7 @@ const grupos = [
       {
         nctrl: "20400749",
         datos: {
-          id_curp: "DEF789012JKL",
+          curp: "DEF789012JKL",
           nombre: "Ana María Torres",
           carrera: "Ingeniería en Sistemas Computacionales",
           tecnologico: "Instituto Tecnológico de Tepic",
@@ -2183,7 +2183,7 @@ const grupos = [
       {
         nctrl: "20400751",
         datos: {
-          id_curp: "JKL012345STU",
+          curp: "JKL012345STU",
           nombre: "Laura Martínez Fernández",
           carrera: "Ingeniería en Sistemas Computacionales",
           tecnologico: "Instituto Tecnológico de Tepic",
@@ -2192,7 +2192,7 @@ const grupos = [
       {
         nctrl: "20400753",
         datos: {
-          id_curp: "PQR678901YZA",
+          curp: "PQR678901YZA",
           nombre: "María del Carmen Rodríguez",
           carrera: "Ingeniería en Sistemas Computacionales",
           tecnologico: "Instituto Tecnológico de Tepic",
@@ -2201,7 +2201,7 @@ const grupos = [
       {
         nctrl: "20400754",
         datos: {
-          id_curp: "STU901234BCD",
+          curp: "STU901234BCD",
           nombre: "Luis Antonio Méndez",
           carrera: "Ingeniería en Sistemas Computacionales",
           tecnologico: "Instituto Tecnológico de Tepic",
@@ -2210,7 +2210,7 @@ const grupos = [
       {
         nctrl: "20400761",
         datos: {
-          id_curp: "OPQ345678XYZ",
+          curp: "OPQ345678XYZ",
           nombre: "Lucía Pérez",
           carrera: "Ingeniería en Sistemas Computacionales",
           tecnologico: "Instituto Tecnológico de Tepic",
@@ -2219,7 +2219,7 @@ const grupos = [
       {
         nctrl: "20400763",
         datos: {
-          id_curp: "UVW567890DEF",
+          curp: "UVW567890DEF",
           nombre: "Alicia Reyes",
           carrera: "Ingeniería en Sistemas Computacionales",
           tecnologico: "Instituto Tecnológico de Tepic",
@@ -2228,7 +2228,7 @@ const grupos = [
       {
         nctrl: "20400764",
         datos: {
-          id_curp: "XYZ234567GHI",
+          curp: "XYZ234567GHI",
           nombre: "Jorge Torres",
           carrera: "Ingeniería en Sistemas Computacionales",
           tecnologico: "Instituto Tecnológico de Tepic",
@@ -2237,7 +2237,7 @@ const grupos = [
       {
         nctrl: "20400766",
         datos: {
-          id_curp: "DEF345678LMN",
+          curp: "DEF345678LMN",
           nombre: "Miguel Sánchez",
           carrera: "Ingeniería en Sistemas Computacionales",
           tecnologico: "Instituto Tecnológico de Tepic",
@@ -2246,7 +2246,7 @@ const grupos = [
       {
         nctrl: "20400768",
         datos: {
-          id_curp: "JKL012345RST",
+          curp: "JKL012345RST",
           nombre: "Luis Castro",
           carrera: "Ingeniería en Sistemas Computacionales",
           tecnologico: "Instituto Tecnológico de Tepic",
@@ -2255,7 +2255,7 @@ const grupos = [
       {
         nctrl: "20400769",
         datos: {
-          id_curp: "LMN345678UVW",
+          curp: "LMN345678UVW",
           nombre: "Carolina Peña",
           carrera: "Ingeniería en Sistemas Computacionales",
           tecnologico: "Instituto Tecnológico de Tepic",
@@ -2264,7 +2264,7 @@ const grupos = [
       {
         nctrl: "20400771",
         datos: {
-          id_curp: "RST123456ABC",
+          curp: "RST123456ABC",
           nombre: "Ximena López",
           carrera: "Ingeniería en Sistemas Computacionales",
           tecnologico: "Instituto Tecnológico de Tepic",
@@ -2273,7 +2273,7 @@ const grupos = [
       {
         nctrl: "20400773",
         datos: {
-          id_curp: "XYZ567890GHI",
+          curp: "XYZ567890GHI",
           nombre: "Laura Díaz",
           carrera: "Ingeniería en Sistemas Computacionales",
           tecnologico: "Instituto Tecnológico de Tepic",
@@ -2282,7 +2282,7 @@ const grupos = [
       {
         nctrl: "20400774",
         datos: {
-          id_curp: "ABC901234JKL",
+          curp: "ABC901234JKL",
           nombre: "Andrés Contreras",
           carrera: "Ingeniería en Sistemas Computacionales",
           tecnologico: "Instituto Tecnológico de Tepic",
@@ -2299,7 +2299,7 @@ const alumnos = [
   {
     nctrl: "20400748",
     datos: {
-      id_curp: "ABC123456XYZ",
+      curp: "ABC123456XYZ",
       nombre: "Carlos Gómez Ramírez",
       carrera: "Ingeniería en Sistemas Computacionales",
       tecnologico: "Instituto Tecnológico de Tepic",
@@ -2321,7 +2321,7 @@ const alumnos = [
   {
     nctrl: "20400749",
     datos: {
-      id_curp: "DEF789012JKL",
+      curp: "DEF789012JKL",
       nombre: "Ana María Torres",
       carrera: "Ingeniería en Sistemas Computacionales",
       tecnologico: "Instituto Tecnológico de Tepic",
@@ -2341,7 +2341,7 @@ const alumnos = [
   {
     nctrl: "20400750",
     datos: {
-      id_curp: "GHI345678OPQ",
+      curp: "GHI345678OPQ",
       nombre: "José Luis Hernández",
       carrera: "Ingeniería en Sistemas Computacionales",
       tecnologico: "Instituto Tecnológico de Tepic",
@@ -2363,7 +2363,7 @@ const alumnos = [
   {
     nctrl: "20400751",
     datos: {
-      id_curp: "JKL012345STU",
+      curp: "JKL012345STU",
       nombre: "Laura Martínez Fernández",
       carrera: "Ingeniería en Sistemas Computacionales",
       tecnologico: "Instituto Tecnológico de Tepic",
@@ -2384,7 +2384,7 @@ const alumnos = [
   {
     nctrl: "20400752",
     datos: {
-      id_curp: "MNO456789VWX",
+      curp: "MNO456789VWX",
       nombre: "Pedro Sánchez García",
       carrera: "Ingeniería en Sistemas Computacionales",
       tecnologico: "Instituto Tecnológico de Tepic",
@@ -2403,7 +2403,7 @@ const alumnos = [
   {
     nctrl: "20400753",
     datos: {
-      id_curp: "PQR678901YZA",
+      curp: "PQR678901YZA",
       nombre: "María del Carmen Rodríguez",
       carrera: "Ingeniería en Sistemas Computacionales",
       tecnologico: "Instituto Tecnológico de Tepic",
@@ -2424,7 +2424,7 @@ const alumnos = [
   {
     nctrl: "20400754",
     datos: {
-      id_curp: "STU901234BCD",
+      curp: "STU901234BCD",
       nombre: "Luis Antonio Méndez",
       carrera: "Ingeniería en Sistemas Computacionales",
       tecnologico: "Instituto Tecnológico de Tepic",
@@ -2444,7 +2444,7 @@ const alumnos = [
   {
     nctrl: "20400755",
     datos: {
-      id_curp: "VWX234567FGH",
+      curp: "VWX234567FGH",
       nombre: "Sofía García López",
       carrera: "Ingeniería en Sistemas Computacionales",
       tecnologico: "Instituto Tecnológico de Tepic",
@@ -2467,7 +2467,7 @@ const alumnos = [
   {
     nctrl: "20400756",
     datos: {
-      id_curp: "YZA678901IJK",
+      curp: "YZA678901IJK",
       nombre: "Daniel Ortega Rivera",
       carrera: "Ingeniería en Sistemas Computacionales",
       tecnologico: "Instituto Tecnológico de Tepic",
@@ -2489,7 +2489,7 @@ const alumnos = [
   {
     nctrl: "20400757",
     datos: {
-      id_curp: "BCD345678LMN",
+      curp: "BCD345678LMN",
       nombre: "Fernanda Rivas González",
       carrera: "Ingeniería en Sistemas Computacionales",
       tecnologico: "Instituto Tecnológico de Tepic",
@@ -2507,7 +2507,7 @@ const alumnos = [
   {
     nctrl: "20400758",
     datos: {
-      id_curp: "FGH789012OPQ",
+      curp: "FGH789012OPQ",
       nombre: "Carlos Delgado",
       carrera: "Ingeniería en Sistemas Computacionales",
       tecnologico: "Instituto Tecnológico de Tepic",
@@ -2528,7 +2528,7 @@ const alumnos = [
   {
     nctrl: "20400759",
     datos: {
-      id_curp: "IJK012345RST",
+      curp: "IJK012345RST",
       nombre: "Gabriela González",
       carrera: "Ingeniería en Sistemas Computacionales",
       tecnologico: "Instituto Tecnológico de Tepic",
@@ -2548,7 +2548,7 @@ const alumnos = [
   {
     nctrl: "20400760",
     datos: {
-      id_curp: "LMN678901UVW",
+      curp: "LMN678901UVW",
       nombre: "Roberto Medina",
       carrera: "Ingeniería en Sistemas Computacionales",
       tecnologico: "Instituto Tecnológico de Tepic",
@@ -2568,7 +2568,7 @@ const alumnos = [
   {
     nctrl: "20400761",
     datos: {
-      id_curp: "OPQ345678XYZ",
+      curp: "OPQ345678XYZ",
       nombre: "Lucía Pérez",
       carrera: "Ingeniería en Sistemas Computacionales",
       tecnologico: "Instituto Tecnológico de Tepic",
@@ -2588,7 +2588,7 @@ const alumnos = [
   {
     nctrl: "20400762",
     datos: {
-      id_curp: "RST901234ABC",
+      curp: "RST901234ABC",
       nombre: "Héctor Mendoza",
       carrera: "Ingeniería en Sistemas Computacionales",
       tecnologico: "Instituto Tecnológico de Tepic",
@@ -2609,7 +2609,7 @@ const alumnos = [
   {
     nctrl: "20400763",
     datos: {
-      id_curp: "UVW567890DEF",
+      curp: "UVW567890DEF",
       nombre: "Alicia Reyes",
       carrera: "Ingeniería en Sistemas Computacionales",
       tecnologico: "Instituto Tecnológico de Tepic",
@@ -2631,7 +2631,7 @@ const alumnos = [
   {
     nctrl: "20400764",
     datos: {
-      id_curp: "XYZ234567GHI",
+      curp: "XYZ234567GHI",
       nombre: "Jorge Torres",
       carrera: "Ingeniería en Sistemas Computacionales",
       tecnologico: "Instituto Tecnológico de Tepic",
@@ -2654,7 +2654,7 @@ const alumnos = [
   {
     nctrl: "20400765",
     datos: {
-      id_curp: "ABC901234JKL",
+      curp: "ABC901234JKL",
       nombre: "Patricia Álvarez",
       carrera: "Ingeniería en Sistemas Computacionales",
       tecnologico: "Instituto Tecnológico de Tepic",
@@ -2673,7 +2673,7 @@ const alumnos = [
   {
     nctrl: "20400766",
     datos: {
-      id_curp: "DEF345678LMN",
+      curp: "DEF345678LMN",
       nombre: "Miguel Sánchez",
       carrera: "Ingeniería en Sistemas Computacionales",
       tecnologico: "Instituto Tecnológico de Tepic",
@@ -2692,7 +2692,7 @@ const alumnos = [
   {
     nctrl: "20400767",
     datos: {
-      id_curp: "GHI567890OPQ",
+      curp: "GHI567890OPQ",
       nombre: "Natalia Flores",
       carrera: "Ingeniería en Sistemas Computacionales",
       tecnologico: "Instituto Tecnológico de Tepic",
@@ -2712,7 +2712,7 @@ const alumnos = [
   {
     nctrl: "20400768",
     datos: {
-      id_curp: "JKL012345RST",
+      curp: "JKL012345RST",
       nombre: "Luis Castro",
       carrera: "Ingeniería en Sistemas Computacionales",
       tecnologico: "Instituto Tecnológico de Tepic",
@@ -2734,7 +2734,7 @@ const alumnos = [
   {
     nctrl: "20400769",
     datos: {
-      id_curp: "LMN345678UVW",
+      curp: "LMN345678UVW",
       nombre: "Carolina Peña",
       carrera: "Ingeniería en Sistemas Computacionales",
       tecnologico: "Instituto Tecnológico de Tepic",
@@ -2755,7 +2755,7 @@ const alumnos = [
   {
     nctrl: "20400770",
     datos: {
-      id_curp: "OPQ789012XYZ",
+      curp: "OPQ789012XYZ",
       nombre: "Juan Pérez",
       carrera: "Ingeniería en Sistemas Computacionales",
       tecnologico: "Instituto Tecnológico de Tepic",
@@ -2776,7 +2776,7 @@ const alumnos = [
   {
     nctrl: "20400771",
     datos: {
-      id_curp: "RST123456ABC",
+      curp: "RST123456ABC",
       nombre: "Ximena López",
       carrera: "Ingeniería en Sistemas Computacionales",
       tecnologico: "Instituto Tecnológico de Tepic",
@@ -2796,7 +2796,7 @@ const alumnos = [
   {
     nctrl: "20400772",
     datos: {
-      id_curp: "UVW789012DEF",
+      curp: "UVW789012DEF",
       nombre: "Oscar García",
       carrera: "Ingeniería en Sistemas Computacionales",
       tecnologico: "Instituto Tecnológico de Tepic",
@@ -2817,7 +2817,7 @@ const alumnos = [
   {
     nctrl: "20400773",
     datos: {
-      id_curp: "XYZ567890GHI",
+      curp: "XYZ567890GHI",
       nombre: "Laura Díaz",
       carrera: "Ingeniería en Sistemas Computacionales",
       tecnologico: "Instituto Tecnológico de Tepic",
@@ -2838,7 +2838,7 @@ const alumnos = [
   {
     nctrl: "20400774",
     datos: {
-      id_curp: "ABC901234JKL",
+      curp: "ABC901234JKL",
       nombre: "Andrés Contreras",
       carrera: "Ingeniería en Sistemas Computacionales",
       tecnologico: "Instituto Tecnológico de Tepic",
@@ -2860,7 +2860,7 @@ const alumnos = [
   {
     nctrl: "20400775",
     datos: {
-      id_curp: "DEF345678LMN",
+      curp: "DEF345678LMN",
       nombre: "Camila Ramos",
       carrera: "Ingeniería en Sistemas Computacionales",
       tecnologico: "Instituto Tecnológico de Tepic",
@@ -3027,7 +3027,7 @@ db.alumno.updateMany(
 
 const docentes = [
   {
-    id_rfc: "ABCD123456EFG",
+    rfc: "ABCD123456EFG",
     datos: {
       nombre: "Juan Carlos Hernández García",
       carrera: "Ingeniería en Sistemas Computacionales",
@@ -3081,7 +3081,7 @@ const docentes = [
     ],
   },
   {
-    id_rfc: "EFGH789012JKL",
+    rfc: "EFGH789012JKL",
     datos: {
       nombre: "Ana María Gómez Torres",
       carrera: "Ingeniería en Sistemas Computacionales",
@@ -3135,7 +3135,7 @@ const docentes = [
     ],
   },
   {
-    id_rfc: "MNOP345678QRS",
+    rfc: "MNOP345678QRS",
     datos: {
       nombre: "José Luis Morales",
       carrera: "Ingeniería en Sistemas Computacionales",
@@ -3167,7 +3167,7 @@ const docentes = [
     ],
   },
   {
-    id_rfc: "TUVW567890XYZ",
+    rfc: "TUVW567890XYZ",
     datos: {
       nombre: "Laura Martínez Fernández",
       carrera: "Ingeniería en Sistemas Computacionales",
@@ -3211,7 +3211,7 @@ const docentes = [
     ],
   },
   {
-    id_rfc: "WXYZ123456ABC",
+    rfc: "WXYZ123456ABC",
     datos: {
       nombre: "Pedro Sánchez Ramírez",
       carrera: "Ingeniería en Sistemas Computacionales",
@@ -3614,12 +3614,12 @@ use("escenario");
 db.grupo.aggregate([
   {
     $match: {
-      "docente.id_rfc": "ABCD123456EFG",
+      "docente.rfc": "ABCD123456EFG",
     },
   },
   {
     $group: {
-      _id: "$docente.id_rfc",
+      _id: "$docente.rfc",
       docente: { $first: "$docente" },
       grupos: {
         $push: {
