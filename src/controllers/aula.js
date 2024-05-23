@@ -24,12 +24,19 @@ exports.obtenerAulaEspecifico = async (req, res) => {
 };
 
 exports.crearAula = async (req, res) => {
-    const nuevaAula = new aula(req.body);
     try {
-        const AulaSave = await nuevaAula.save();
-        res.status(201).json({ AulaSave });
+        if (Array.isArray(req.body)) {
+            // Si es un arreglo, utilizar insertMany para insertar todas las aulas
+            const aulasGuardadas = await aula.insertMany(req.body);
+            res.status(201).json({ aulas: aulasGuardadas });
+        } else {
+            // Si no es un arreglo, crear y guardar una sola aula
+            const nuevaAula = new aula(req.body);
+            const aulaGuardada = await nuevaAula.save();
+            res.status(201).json({ aula: aulaGuardada });
+        }
     } catch (error) {
-        res.status(400).json({ message: 'Error al crear el aula', detalle: error.message });
+        res.status(500).json({ message: 'Error al crear el aula', detalle: error.message });
     }
 };
 

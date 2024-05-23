@@ -4,6 +4,7 @@ const express = require('express'); // Framework para construir aplicaciones web
 const cors = require('cors'); // Middleware para permitir solicitudes de recursos cruzados
 const morgan = require('morgan'); // Middleware para el registro de solicitudes HTTP
 const logger = require('./middleware/logger'); // Middleware personalizado para registrar solicitudes en Redis
+const bodyParser = require('body-parser');
 
 const { mongoose, redisClient } = require('./config/db'); // Importamos las configuraciones de MongoDB y Redis
 // Importamos las rutas
@@ -15,14 +16,18 @@ const docenteRoutes = require('./routes/docente');
 
 // Creamos una instancia de la aplicación Express
 const app = express();
+app.use(bodyParser.json({ limit: '50mb' })); // Para JSON
+app.use(bodyParser.urlencoded({ limit: '50mb', extended: true })); // Para URL-encoded
+
 // Middleware para parsear solicitudes JSON
 app.use(express.json());
 // Middleware para permitir solicitudes de recursos cruzados
 app.use(cors());
 // Middleware para registrar solicitudes HTTP
 app.use(morgan('dev'));
+
 // Middleware personalizado para registrar solicitudes en Redis
-//app.use(logger);
+app.use(logger);
 // Usamos las rutas importadas
 app.use('/api/alumno', alumnosRoutes);
 app.use('/api/materia', materiasRoutes);

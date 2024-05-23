@@ -25,10 +25,17 @@ exports.obtenerGrupoEspecifico = async (req, res) => {
 };
 
 exports.crearGrupo = async (req, res) => {
-    const nuevagrupo = new grupo(req.body);
     try {
-        const grupoSave = await nuevagrupo.save();
-        res.status(201).json({ grupoSave });
+        if (Array.isArray(req.body)) {
+            // Si es un arreglo, utilizar insertMany para insertar todos los grupos
+            const gruposGuardados = await grupo.insertMany(req.body);
+            res.status(201).json({ grupos: gruposGuardados });
+        } else {
+            // Si no es un arreglo, guardar un solo grupo
+            const nuevoGrupo = new grupo(req.body);
+            const grupoGuardado = await nuevoGrupo.save();
+            res.status(201).json({ grupo: grupoGuardado });
+        }
     } catch (error) {
         res.status(500).json({ message: 'Error al crear el grupo', detalle: error.message });
     }
@@ -62,10 +69,16 @@ exports.eliminarGrupo = async (req, res) => {
     }
 };
 
+
 exports.q6 = async (req, res) => {
+    let { id } = req.params; // Asumiendo que `id` es el ID de la materia
+    id = parseInt(id);
     try {
-        res.status(200).json({ message: 'Operación q6 realizada correctamente' });
+      const grupos = await grupo.find({ "materia.id": id }); // Asumiendo que el modelo Grupo tiene un campo `materia`
+      res.json(grupos);
     } catch (error) {
-        res.status(500).json({ message: 'Error en la operación q6', detalle: error.message });
+      res.status(500).send({ error: `Error al obtener los grupos de la materia con ID: ${id}`, detalles: error.message });
     }
 };
+
+

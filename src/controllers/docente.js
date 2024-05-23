@@ -25,10 +25,17 @@ exports.obtenerDocenteEspecifico = async (req, res) => {
 };
 
 exports.crearDocente = async (req, res) => {
-    const nuevodocente = new docente(req.body);
     try {
-        const docentesave = await nuevodocente.save();
-        res.status(201).json({ docentesave });
+        if (Array.isArray(req.body)) {
+            // Si es un arreglo, utilizar insertMany para insertar todos los docentes
+            const docentesGuardados = await docente.insertMany(req.body);
+            res.status(201).json({ docentes: docentesGuardados });
+        } else {
+            // Si no es un arreglo, guardar un solo docente
+            const nuevoDocente = new docente(req.body);
+            const docenteGuardado = await nuevoDocente.save();
+            res.status(201).json({ docente: docenteGuardado });
+        }
     } catch (error) {
         res.status(500).json({ message: 'Error al crear el docente', detalle: error.message });
     }
@@ -62,18 +69,63 @@ exports.eliminarDocente = async (req, res) => {
     }
 };
 
-exports.q4 = async (req, res) => {
+
+const Grupo = require('../models/grupo'); // Importa el modelo del grupo
+exports.q9 = async (req, res) => {
+    const {rfc}= req.params;
     try {
-        res.status(200).json({ message: 'Operación q1 realizada correctamente' });
+        // Realiza la consulta utilizando el método aggregate del modelo de grupo
+        const resultado = await Grupo.aggregate([
+            {
+                $match: {
+                    "docente.rfc": rfc, // Filtra por el RFC del docente específico
+                },
+            },
+            {
+                $group: {
+                    _id: "$docente.rfc",
+                    docente: { $first: "$docente" },
+                    grupos: {
+                        $push: {
+                            horario: "$horario",
+                            aula: "$aula",
+                            materia: "$materia",
+                            alumnos: "$alumnos",
+                        },
+                    },
+                },
+            },
+        ]);
+
+        // Envía la respuesta con el resultado de la consulta
+        res.status(200).json(resultado);
     } catch (error) {
-        res.status(500).json({ message: 'Error en la operación q1', detalle: error.message });
+        // Maneja los errores
+        res.status(500).json({ message: 'Error en la operación q9', detalle: error.message });
     }
 };
 
-exports.q9 = async (req, res) => {
+exports.q4 = async (req, res) => {
+    let { id } = req.params;
+    id = parseInt(id);
     try {
-        res.status(200).json({ message: 'Operación q2 realizada correctamente' });
+      const resultado = await docente.aggregate([
+        { $unwind: "$materias_impartidas" },
+        {
+          $match: {
+            "materias_impartidas.id": id
+          }
+        },
+        {
+          $group: {
+            _id: "$materias_impartidas.id",
+            materia: { $first: "$materias_impartidas" },
+            docentes: { $push: "$datos" },
+          },
+        }
+      ]);
+      res.status(200).send(resultado);
     } catch (error) {
-        res.status(500).json({ message: 'Error en la operación q2', detalle: error.message });
+      res.status(500).send({ error: `Error al obtener los docentes que imparten la materia con ID: ${id}`, detalles: error.message });
     }
-};
+  };
