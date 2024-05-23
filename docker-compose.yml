@@ -1,7 +1,7 @@
 version: '3.8'
 services:
   app01:
-    build: .
+    image: karlysweet/node-rutas-escuela
     ports:
       - "3000:3000"
     depends_on:
@@ -14,8 +14,6 @@ services:
       - REDIS_HOST=redis01
       - REDIS_PORT=6379
       - PORT=3000
-    volumes:
-      - .:/app
     networks:
       - red01
   mongo01:
